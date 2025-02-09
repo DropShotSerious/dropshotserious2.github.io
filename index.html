@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Join the DSS Arma 3 Community for tactical gameplay, mods, and active events.">
+    <meta name="keywords" content="Arma 3, DSS, mods, community, events">
     <title>DSS Arma 3 Community</title>
 
     <style>
@@ -132,8 +134,23 @@
             color: #ecf0f1;
             text-decoration: none;
         }
-    </style>
 
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+            }
+
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            form {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -143,12 +160,12 @@
             <h1>Arma 3 Community</h1>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#community">Community</a></li>
-                    <li><a href="#mods">Mods</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" aria-label="Go to Home">Home</a></li>
+                    <li><a href="#about" aria-label="Go to About">About</a></li>
+                    <li><a href="#community" aria-label="Go to Community">Community</a></li>
+                    <li><a href="#mods" aria-label="Go to Mods">Mods</a></li>
+                    <li><a href="#events" aria-label="Go to Events">Events</a></li>
+                    <li><a href="#contact" aria-label="Go to Contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -162,7 +179,7 @@
             <p>Join us for tactical gameplay, mods, and an active community.</p>
             <!-- Server Stats Example -->
             <div class="server-stats">
-                <p>Server Status: <span id="server-status">Ofline</span></p>
+                <p>Server Status: <span id="server-status">Offline</span></p>
                 <p>Players Online: <span id="player-count">000</span></p>
                 <p>Active Mods: <span id="active-mods">Currently None</span></p>
             </div>
@@ -186,8 +203,8 @@
         <section id="mods">
             <h2>Featured Mods</h2>
             <ul>
-                <li>Mod 1: ace - https://steamcommunity.com/sharedfiles/filedetails/?id=463939057 - <a href="#">Download</a></li>
-                <li>Mod 2: Antistasi - https://steamcommunity.com/sharedfiles/filedetails/?id=2867537125 - <a href="#">Download</a></li>
+                <li>Mod 1: ace - <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=463939057" target="_blank" aria-label="Download Mod ace">Download</a></li>
+                <li>Mod 2: Antistasi - <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2867537125" target="_blank" aria-label="Download Mod Antistasi">Download</a></li>
             </ul>
         </section>
 
@@ -219,7 +236,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 DSS Arma 3 Community. All rights reserved.</p>
-            <p>Follow us on: <a href="#">Discord</a> | <a href="#">Twitter</a></p>
+            <p>Follow us on: <a href="https://discord.com/invite/your-invite-link" target="_blank">Discord</a> | <a href="https://twitter.com/your-twitter-handle" target="_blank">Twitter</a></p>
         </div>
     </footer>
 
@@ -247,6 +264,11 @@
 
             // Update active mods
             activeMods.textContent = mods.join(", ");
+        });
+
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent form submission
+            alert("Form submitted successfully!");
         });
     </script>
 
