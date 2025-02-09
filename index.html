@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dirty Bubble Theme - Discord Clone</title>
+    <title>The Dirty Bubble's Discord Page</title>
     <style>
         /* styles.css */
         
@@ -149,13 +149,13 @@
         <aside class="sidebar">
             <div class="profile">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Dirty_Bubble.png/500px-Dirty_Bubble.png" alt="Dirty Bubble" class="profile-icon">
-                <h3 class="username">Dirty Bubble</h3>
+                <h3 class="username">A Dirty Bubble</h3>
             </div>
             <nav class="channels">
                 <ul>
                     <li><a href="#"># General</a></li>
-                    <li><a href="#"># Memes</a></li>
-                    <li><a href="#"># SpongeBob Fans</a></li>
+                    <li><a href="#"># Dirty Memes</a></li>
+                    <li><a href="#"># The Dirt Bubble's</a></li>
                 </ul>
             </nav>
         </aside>
@@ -171,9 +171,11 @@
             <input type="text" class="message-input" placeholder="Type a message...">
         </main>
     </div>
+
     <script>
         // script.js
 
+        // Send message when the "Enter" key is pressed
         document.querySelector(".message-input").addEventListener("keydown", function(event) {
             if (event.key === "Enter" && this.value.trim() !== "") {
                 const message = document.createElement("div");
@@ -181,10 +183,26 @@
                 message.textContent = this.value;
                 
                 document.querySelector(".chat-messages").appendChild(message);
-                this.value = ""; // Clear the input
+                this.value = ""; // Clear the input field
                 document.querySelector(".chat-messages").scrollTop = document.querySelector(".chat-messages").scrollHeight;
             }
         });
+
+        // Function to simulate incoming messages from Dirty Bubble
+        function receiveMessage(text) {
+            const message = document.createElement("div");
+            message.classList.add("message", "received");
+            message.textContent = text;
+            
+            document.querySelector(".chat-messages").appendChild(message);
+            document.querySelector(".chat-messages").scrollTop = document.querySelector(".chat-messages").scrollHeight;
+        }
+
+        // Simulate receiving messages from Dirty Bubble
+        setTimeout(() => receiveMessage("I'm the Dirty Bubble! Watch out, HAHAHA!"), 2000);
+        setTimeout(() => receiveMessage("I'm gonna get you, You Dirty Bubble!"), 4000);
+        setTimeout(() => receiveMessage("I'm bubbling over with rage!"), 6000);
+
     </script>
 </body>
 </html>
