@@ -1,10 +1,10 @@
 // Preload player and alien images
 const playerImage = new Image();
 const alienImages = [
-    'images/alienGreen.png',
-    'images/alienRed.png',
-    'images/alienYellow.png',
-    'images/alienExtra.png'
+    '/images/alienGreen.png',
+    '/images/alienRed.png',
+    '/images/alienYellow.png',
+    '/images/alienExtra.png'
 ];
 
 let loadedImages = 0;
@@ -15,7 +15,7 @@ const alienImageObjects = alienImages.map(src => {
     return img;
 });
 
-playerImage.src = 'images/player.png';
+playerImage.src = '/images/player.png';
 playerImage.onload = checkImagesLoaded;
 
 let imagesLoaded = false;
@@ -57,10 +57,10 @@ let rightArrowPressed = false;
 let spacePressed = false;
 
 // Sounds
-const shootSound = new Audio('sounds/shoot.mp3');
-const alienHitSound = new Audio('sounds/alienHit.mp3');
-const gameOverSound = new Audio('sounds/gameOver.mp3');
-const levelUpSound = new Audio('sounds/levelUp.mp3');
+const shootSound = new Audio('/sounds/shoot.mp3');
+const alienHitSound = new Audio('/sounds/alienHit.mp3');
+const gameOverSound = new Audio('/sounds/gameOver.mp3');
+const levelUpSound = new Audio('/sounds/levelUp.mp3');
 
 // Handle audio loading errors
 shootSound.addEventListener('error', (err) => { console.error('Error loading shoot sound:', err); });
